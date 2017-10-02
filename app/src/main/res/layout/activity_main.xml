@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE android.support.design.widget.CoordinatorLayout [<!ELEMENT android.support.design.widget.CoordinatorLayout (android.support.design.widget.AppBarLayout|include|android.support.design.widget.FloatingActionButton|Button)*><!ATTLIST android.support.design.widget.CoordinatorLayoutxmlns:android CDATA #REQUIREDxmlns:app CDATA #REQUIREDxmlns:tools CDATA #REQUIREDandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIREDtools:context CDATA #REQUIRED><!ELEMENT android.support.design.widget.AppBarLayout (android.support.v7.widget.Toolbar)*><!ATTLIST android.support.design.widget.AppBarLayoutandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIREDandroid:theme CDATA #REQUIRED><!ELEMENT android.support.v7.widget.Toolbar (#PCDATA)><!ATTLIST android.support.v7.widget.Toolbarandroid:id CDATA #REQUIREDandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIREDandroid:background CDATA #REQUIREDapp:popupTheme CDATA #REQUIRED><!ELEMENT include (#PCDATA)><!ATTLIST includelayout CDATA #REQUIREDandroid:id CDATA #REQUIRED><!ELEMENT android.support.design.widget.FloatingActionButton (#PCDATA)><!ATTLIST android.support.design.widget.FloatingActionButtonandroid:id CDATA #REQUIREDandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIREDandroid:layout_gravity CDATA #REQUIREDandroid:layout_margin CDATA #REQUIREDapp:srcCompat CDATA #REQUIRED><!ELEMENT Button (#PCDATA)><!ATTLIST Buttonandroid:id CDATA #REQUIREDandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIREDandroid:layout_gravity CDATA #REQUIREDandroid:text CDATA #REQUIREDapp:layout_anchor CDATA #REQUIREDapp:layout_anchorGravity CDATA #REQUIRED>]>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fr.wcs.blablawild.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main"
+        android:id="@+id/include" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="@string/rechercher"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center_vertical|center_horizontal" />
+
+</android.support.design.widget.CoordinatorLayout>
